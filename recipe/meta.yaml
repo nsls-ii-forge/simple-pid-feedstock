@@ -1,17 +1,16 @@
 {% set name = "simple-pid" %}
 {% set version = "0.2.4" %}
-{% set sha256 = "d1192b4c42ea5b3d278bb85b565841acb6292e60af2fb31f28c56eb8e704326d" %}
+{% set sha256 = "441150075c846460acd38eeb232bab1ac75194f851237f0459307217e4a57525" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  # TODO: Use PyPI sources after https://github.com/m-lundberg/simple-pid/pull/31 merged/released.
+  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://github.com/m-lundberg/{{ name }}/archive/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # TODO: remove this patch after https://github.com/m-lundberg/simple-pid/pull/31 merged/released.
-    - 0001-missing-files.patch
 
 build:
   number: 0
