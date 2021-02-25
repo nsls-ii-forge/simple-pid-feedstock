@@ -7,9 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  # TODO: Use PyPI sources after https://github.com/m-lundberg/simple-pid/pull/31 merged/released.
-  # url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  url: https://github.com/m-lundberg/{{ name }}/archive/v{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
@@ -27,6 +25,11 @@ requirements:
 test:
   imports:
     - simple_pid
+  # TODO: Uncomments these lines to test the resource files are included in the
+  # PyPI sdist (https://github.com/m-lundberg/simple-pid/pull/31).
+  # commands:
+  #   - python -c 'import os, pkg_resources; assert os.path.isfile(pkg_resources.resource_filename("simple_pid", "PID.pyi"))'
+  #   - python -c 'import os, pkg_resources; assert os.path.isfile(pkg_resources.resource_filename("simple_pid", "py.typed"))'
 
 about:
   home: https://github.com/m-lundberg/simple-pid
