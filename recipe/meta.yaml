@@ -25,6 +25,11 @@ requirements:
 test:
   imports:
     - simple_pid
+  # TODO: Uncomments these lines to test the resource files are included in the
+  # PyPI sdist (https://github.com/m-lundberg/simple-pid/pull/31).
+  # commands:
+  #   - python -c 'import os, pkg_resources; assert os.path.isfile(pkg_resources.resource_filename("simple_pid", "PID.pyi"))'
+  #   - python -c 'import os, pkg_resources; assert os.path.isfile(pkg_resources.resource_filename("simple_pid", "py.typed"))'
 
 about:
   home: https://github.com/m-lundberg/simple-pid
