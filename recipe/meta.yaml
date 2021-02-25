@@ -1,0 +1,36 @@
+{% set name = "simple-pid" %}
+{% set version = "0.2.4" %}
+{% set sha256 = "d1192b4c42ea5b3d278bb85b565841acb6292e60af2fb31f28c56eb8e704326d" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps
+
+requirements:
+  host:
+    - python
+    - pip
+  run:
+    - python
+
+test:
+  imports:
+    - simple_pid
+
+about:
+  home: https://github.com/m-lundberg/simple-pid
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE.md
+  summary: A simple, easy to use PID controller
+  dev_url: https://github.com/m-lundberg/simple-pid
+  doc_url: https://simple-pid.readthedocs.io
