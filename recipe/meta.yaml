@@ -9,6 +9,9 @@ package:
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    # TODO: remove this patch after https://github.com/m-lundberg/simple-pid/pull/31 merged/released.
+    - 0001-missing-files.patch
 
 build:
   number: 0
