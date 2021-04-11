@@ -1,6 +1,6 @@
 {% set name = "simple-pid" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "f101661e3ae6596342f2fe6d8e56a0ec96525fae335f91c7b59cf1660f97a7ef" %}
+{% set version = "1.0.1" %}
+{% set sha256 = "60d6b3a7c3f19734d33bbc5938293c4924d7cfea74176def03306057b3f99524" %}
 
 package:
   name: {{ name|lower }}
